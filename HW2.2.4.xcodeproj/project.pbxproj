@@ -19,7 +19,7 @@
 		57F4F0D324F919460011A014 /* HW2.2.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.2.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F4F0D624F919460011A014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F4F0D824F919460011A014 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57F4F0DA24F919460011A014 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57F4F0DA24F919460011A014 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		57F4F0DD24F919460011A014 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57F4F0DF24F9194A0011A014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57F4F0E224F9194A0011A014 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,55 @@
 		57F4F0D524F919460011A014 /* HW2.2.4 */ = {
 			isa = PBXGroup;
 			children = (
-				57F4F0D624F919460011A014 /* AppDelegate.swift */,
-				57F4F0D824F919460011A014 /* SceneDelegate.swift */,
-				57F4F0DA24F919460011A014 /* ViewController.swift */,
-				57F4F0DC24F919460011A014 /* Main.storyboard */,
-				57F4F0DF24F9194A0011A014 /* Assets.xcassets */,
-				57F4F0E124F9194A0011A014 /* LaunchScreen.storyboard */,
-				57F4F0E424F9194A0011A014 /* Info.plist */,
+				57F4F0EB24F919FA0011A014 /* ViewControllers */,
+				57F4F0EC24F91A040011A014 /* Models */,
+				57F4F0ED24F91A0C0011A014 /* Storyboards */,
+				57F4F0EF24F91A1C0011A014 /* Sources */,
+				57F4F0EE24F91A150011A014 /* SupportingFiles */,
 			);
 			path = HW2.2.4;
+			sourceTree = "<group>";
+		};
+		57F4F0EB24F919FA0011A014 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57F4F0DA24F919460011A014 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		57F4F0EC24F91A040011A014 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57F4F0ED24F91A0C0011A014 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				57F4F0DC24F919460011A014 /* Main.storyboard */,
+				57F4F0E124F9194A0011A014 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		57F4F0EE24F91A150011A014 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				57F4F0D624F919460011A014 /* AppDelegate.swift */,
+				57F4F0D824F919460011A014 /* SceneDelegate.swift */,
+				57F4F0E424F9194A0011A014 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		57F4F0EF24F91A1C0011A014 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				57F4F0DF24F9194A0011A014 /* Assets.xcassets */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +326,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5V636B7HL;
-				INFOPLIST_FILE = HW2.2.4/Info.plist;
+				INFOPLIST_FILE = HW2.2.4/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SKD.HW2-2-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +345,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5V636B7HL;
-				INFOPLIST_FILE = HW2.2.4/Info.plist;
+				INFOPLIST_FILE = HW2.2.4/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SKD.HW2-2-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
