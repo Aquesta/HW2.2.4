@@ -11,7 +11,7 @@ struct Authorization {
     let password: String
 
     init() {
-        self.login = "1"
+        self.login = "Gennady"
         self.password = "1"
     }
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeTextOutlet: UILabel!
-
+    @IBOutlet var logOutOutlet: UIButton!
+    
     private var tabBar: UITabBar?
     var userName: String?
 
@@ -18,6 +19,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         welcomeTextOutlet.text = "Welcome, \(userName!)"
+        logOutOutlet.layer.cornerRadius = 20
         
         // Цвет TabBar
         tabBar = tabBarController?.tabBar
