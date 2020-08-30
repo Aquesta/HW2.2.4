@@ -18,6 +18,9 @@ class FamilyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "\(user!.name)"
+        
         photoOutlet.layer.cornerRadius = photoOutlet.frame.width / 2
         photoOutlet.layer.borderWidth = 2
         photoOutlet.layer.borderColor = UIColor.orange.cgColor

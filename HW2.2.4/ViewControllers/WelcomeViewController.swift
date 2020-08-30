@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeTextOutlet: UILabel!
     @IBOutlet var logOutOutlet: UIButton!
     
-    private var tabBar: UITabBar?
+    private var tabBar: UITabBar!
     var userName: String?
 
     override func viewDidLoad() {

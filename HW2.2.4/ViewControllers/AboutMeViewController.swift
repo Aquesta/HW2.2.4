@@ -21,6 +21,10 @@ class AboutMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // navBar title
+        self.navigationItem.title = "\(me.name)"
+        
+        // надо перенести в функцию, дублируем
         photoOutlet.layer.cornerRadius = photoOutlet.frame.width / 2
         photoOutlet.layer.borderWidth = 2
         photoOutlet.layer.borderColor = UIColor.orange.cgColor
@@ -32,6 +36,7 @@ class AboutMeViewController: UIViewController {
         descriptionOutlet.text = me.description
         photoOutlet.image = UIImage(named: me.photo)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutWifeSegue" {
