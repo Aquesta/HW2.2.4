@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if sender.tag == 1 {
             showAlert(with: "The username is", and: "Gennady")
         } else {
-            showAlert(with: "The password is", and: "Password")
+            showAlert(with: "The password is", and: "1")
         }
     }
     

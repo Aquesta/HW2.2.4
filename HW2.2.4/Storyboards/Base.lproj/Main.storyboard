@@ -201,8 +201,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-Cq-zjZ">
+                                <rect key="frame" x="100" y="107" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Af4-TN-gUv"/>
+                                    <constraint firstAttribute="width" constant="120" id="C6D-V9-A9B"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-bH-DnN">
-                                <rect key="frame" x="16" y="243" width="288" height="280.5"/>
+                                <rect key="frame" x="16" y="235" width="288" height="280.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="elM-D2-55g">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="47.5"/>
@@ -333,22 +341,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-Cq-zjZ">
-                                <rect key="frame" x="100" y="107" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="4pB-NB-2Er"/>
-                                    <constraint firstAttribute="width" constant="120" id="S2O-Tu-lNT"/>
-                                </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BMy-bH-DnN" firstAttribute="leading" secondItem="SHr-hc-JaU" secondAttribute="leading" constant="16" id="1ks-3B-LfP"/>
-                            <constraint firstItem="jQH-Cq-zjZ" firstAttribute="top" secondItem="SHr-hc-JaU" secondAttribute="top" constant="16" id="2lc-A5-pwQ"/>
-                            <constraint firstAttribute="trailing" secondItem="BMy-bH-DnN" secondAttribute="trailing" constant="16" id="Ram-Nr-loP"/>
-                            <constraint firstItem="jQH-Cq-zjZ" firstAttribute="centerX" secondItem="03B-cC-ggj" secondAttribute="centerX" id="aVO-f8-OBa"/>
-                            <constraint firstItem="BMy-bH-DnN" firstAttribute="top" secondItem="jQH-Cq-zjZ" secondAttribute="bottom" constant="16" id="kuK-h9-Hpi"/>
+                            <constraint firstItem="BMy-bH-DnN" firstAttribute="top" secondItem="jQH-Cq-zjZ" secondAttribute="bottom" constant="8" id="EYc-4t-c3b"/>
+                            <constraint firstAttribute="trailing" secondItem="BMy-bH-DnN" secondAttribute="trailing" constant="16" id="TmD-m1-GuH"/>
+                            <constraint firstItem="jQH-Cq-zjZ" firstAttribute="leading" secondItem="SHr-hc-JaU" secondAttribute="leading" constant="100" id="aQh-Jd-Jd6"/>
+                            <constraint firstItem="BMy-bH-DnN" firstAttribute="leading" secondItem="SHr-hc-JaU" secondAttribute="leading" constant="16" id="q3Q-0F-xlT"/>
+                            <constraint firstItem="jQH-Cq-zjZ" firstAttribute="top" secondItem="SHr-hc-JaU" secondAttribute="top" constant="16" id="zz2-0Z-J3w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SHr-hc-JaU"/>
                     </view>
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LmF-dC-6io" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4000.0000000000005" y="111.83035714285714"/>
+            <point key="canvasLocation" x="3999.375" y="110.91549295774648"/>
         </scene>
         <!--Family-->
         <scene sceneID="al8-Jq-HbH">
@@ -516,7 +516,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m4g-Gn-J9B"/>
+        <segue reference="uPZ-9X-oUH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
