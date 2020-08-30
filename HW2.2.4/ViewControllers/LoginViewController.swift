@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var singInButton: UIButton!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    // инициализируем пользователя
     private var user = Authorization()
     
     override func viewDidLoad() {
@@ -20,7 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         singInButton.layer.cornerRadius = 20
     }
-    
+
+    // передаем на TabBabVC значения username
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginSegue" {
             guard let tabBarController = segue.destination as? UITabBarController else { return }
@@ -29,11 +31,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // скрываем клавиатуру по тапу на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-    
+
+    // авторизация и проверка заполненных значений
     @IBAction func singInPressed(_ sender: UIButton) {
         guard let login = loginTextField.text, !login.isEmpty else {
             showAlert(with: "Username is empty", and: "Please enter username")
@@ -57,7 +61,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         performSegue(withIdentifier: "loginSegue", sender: self)
     }
-    
+
+    // кнопки забилы пароль и имя
     @IBAction func forgotButtonsAction(_ sender: UIButton) {
         if sender.tag == 1 {
             showAlert(with: "The username is", and: "Gennady")
@@ -66,20 +71,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // реализуем метод unwind с кнопки LogOut и очищаем поля username / password
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         loginTextField.text = ""
         passwordTextField.text = ""
     }
     
-//    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    // По кнопке Done не пойму как вкрутить метод singInPressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        }
+        return true
+    }
 }
 
 // MARK: - Alert Controller
 
-extension ViewController {
+extension LoginViewController {
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)

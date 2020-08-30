@@ -18,11 +18,13 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         welcomeTextOutlet.text = "Welcome, \(userName!)"
-
+        
+        // Цвет TabBar
         tabBar = tabBarController?.tabBar
         tabBar?.tintColor = .orange
     }
-
+    
+    // уходим с VC на стартовый экран через unwind
     @IBAction func logOutAction() {
         performSegue(withIdentifier: "unwindSegue", sender: self)
     }
