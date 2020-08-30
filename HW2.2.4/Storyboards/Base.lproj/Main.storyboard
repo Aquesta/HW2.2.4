@@ -453,10 +453,10 @@
             </objects>
             <point key="canvasLocation" x="4946" y="111"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Bhh-kz-eus">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dRe-9J-4WT" customClass="TabBarViewController" customModule="HW2_2_4" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dRe-9J-4WT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L6T-an-U9y">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

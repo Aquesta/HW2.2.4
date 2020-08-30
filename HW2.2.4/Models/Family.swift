@@ -7,11 +7,11 @@
 //
 
 struct Family {
-    let name:String
-    let age:Int
-    let description:String
+    let name: String
+    let age: Int
+    let description: String
     let photo: String
-    
+
     init(name: String, age: Int, description: String, photo: String) {
         self.name = name
         self.age = age

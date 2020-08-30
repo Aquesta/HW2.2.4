@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		575F4B4824FA412900F947B8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B4724FA412900F947B8 /* Authorization.swift */; };
 		575F4B4A24FA4DF500F947B8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B4924FA4DF500F947B8 /* WelcomeViewController.swift */; };
-		575F4B4E24FB772600F947B8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B4D24FB772600F947B8 /* TabBarViewController.swift */; };
 		575F4B5024FB8EE200F947B8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B4F24FB8EE200F947B8 /* Person.swift */; };
 		575F4B5224FB8FFA00F947B8 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B5124FB8FFA00F947B8 /* Family.swift */; };
 		575F4B5624FB909100F947B8 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F4B5524FB909100F947B8 /* AboutMeViewController.swift */; };
@@ -25,7 +24,6 @@
 /* Begin PBXFileReference section */
 		575F4B4724FA412900F947B8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		575F4B4924FA4DF500F947B8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		575F4B4D24FB772600F947B8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		575F4B4F24FB8EE200F947B8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		575F4B5124FB8FFA00F947B8 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		575F4B5524FB909100F947B8 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 			children = (
 				57F4F0DA24F919460011A014 /* ViewController.swift */,
 				575F4B4924FA4DF500F947B8 /* WelcomeViewController.swift */,
-				575F4B4D24FB772600F947B8 /* TabBarViewController.swift */,
 				575F4B5524FB909100F947B8 /* AboutMeViewController.swift */,
 				575F4B5724FBA6A700F947B8 /* FamilyViewController.swift */,
 			);
@@ -207,7 +204,6 @@
 				57F4F0D924F919460011A014 /* SceneDelegate.swift in Sources */,
 				575F4B5624FB909100F947B8 /* AboutMeViewController.swift in Sources */,
 				575F4B5024FB8EE200F947B8 /* Person.swift in Sources */,
-				575F4B4E24FB772600F947B8 /* TabBarViewController.swift in Sources */,
 				575F4B4824FA412900F947B8 /* Authorization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

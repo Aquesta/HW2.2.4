@@ -8,9 +8,7 @@
 
 import UIKit
 
-
 class AboutMeViewController: UIViewController {
-
     @IBOutlet var nameOutlet: UILabel!
     @IBOutlet var ageOutlet: UILabel!
     @IBOutlet var myWifeOutlet: UILabel!
@@ -18,7 +16,7 @@ class AboutMeViewController: UIViewController {
     @IBOutlet var descriptionOutlet: UILabel!
     @IBOutlet var photoOutlet: UIImageView!
     
-    let me = Person()
+    private let me = Person()
     
     override func viewDidLoad() {
         super.viewDidLoad()

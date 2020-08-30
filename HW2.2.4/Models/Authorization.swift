@@ -9,7 +9,7 @@
 struct Authorization {
     let login: String
     let password: String
-    
+
     init() {
         self.login = "1"
         self.password = "1"

@@ -9,20 +9,21 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
     @IBOutlet var welcomeTextOutlet: UILabel!
-   
-    var tabBar:UITabBar?
-    var userName:String?
-    
+
+    private var tabBar: UITabBar?
+    var userName: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         welcomeTextOutlet.text = "Welcome, \(userName!)"
-        tabBar = self.tabBarController?.tabBar
+
+        tabBar = tabBarController?.tabBar
         tabBar?.tintColor = .orange
     }
+
     @IBAction func logOutAction() {
         performSegue(withIdentifier: "unwindSegue", sender: self)
     }
 }
-

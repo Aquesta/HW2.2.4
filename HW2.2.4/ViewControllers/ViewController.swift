@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    var user = Authorization()
+    private var user = Authorization()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginSegue" {
-            guard let tabBarController = segue.destination as? TabBarViewController else { return }
+            guard let tabBarController = segue.destination as? UITabBarController else { return }
             guard let welcomeVC = tabBarController.viewControllers?.first as? WelcomeViewController else { return }
             welcomeVC.userName = user.login as String
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @IBAction func singInPressed(_ sender: UIButton) {
-        
         guard let login = loginTextField.text, !login.isEmpty else {
             showAlert(with: "Username is empty", and: "Please enter username")
             return
@@ -51,7 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        self.performSegue(withIdentifier: "loginSegue", sender: self)
+        performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     @IBAction func forgotButtonsAction(_ sender: UIButton) {
@@ -61,20 +65,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showAlert(with: "The password is", and: "Password")
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    @IBAction func unwind(_ segue:UIStoryboardSegue){
+
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
         loginTextField.text = ""
         passwordTextField.text = ""
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
+//    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
 }
 
 // MARK: - Alert Controller
