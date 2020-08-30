@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var singInButton: UIButton!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -21,20 +21,15 @@ class ViewController: UIViewController {
         singInButton.layer.cornerRadius = 20
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginSegue" {
-            guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-            welcomeVC.userName = user.login
+            guard let tabBarController = segue.destination as? TabBarViewController else { return }
+            guard let welcomeVC = tabBarController.viewControllers?.first as? WelcomeViewController else { return }
+            welcomeVC.userName = user.login as String
         }
     }
     
-    @IBAction func singInAction() {
-        
+    @IBAction func singInPressed(_ sender: UIButton) {
         
         guard let login = loginTextField.text, !login.isEmpty else {
             showAlert(with: "Username is empty", and: "Please enter username")
@@ -57,7 +52,6 @@ class ViewController: UIViewController {
         }
         
         self.performSegue(withIdentifier: "loginSegue", sender: self)
-        
     }
     
     @IBAction func forgotButtonsAction(_ sender: UIButton) {
@@ -67,7 +61,19 @@ class ViewController: UIViewController {
             showAlert(with: "The password is", and: "Password")
         }
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    @IBAction func unwind(_ segue:UIStoryboardSegue){
+        loginTextField.text = ""
+        passwordTextField.text = ""
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
 

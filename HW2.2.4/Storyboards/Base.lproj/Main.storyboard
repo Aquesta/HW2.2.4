@@ -70,7 +70,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="singInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="qkr-bX-eBf"/>
+                                            <action selector="singInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cAW-02-NXU"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Bz-fe-cvF">
@@ -137,6 +137,9 @@
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" red="1" green="0.4039215686" blue="0.1058823529" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutAction" destination="d25-t2-pow" eventType="touchUpInside" id="q9U-w2-HhQ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-2p-jiK">
                                 <rect key="frame" x="80" y="226" width="160" height="116"/>
@@ -165,12 +168,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ksO-Jo-KEH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Welcome" image="person.crop.circle" catalog="system" id="Sup-cZ-NzH"/>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="person.circle" catalog="system" selectedImage="person.circle" id="Sup-cZ-NzH"/>
                     <connections>
-                        <outlet property="welcomeTextOutlet" destination="idU-3c-l4Q" id="ixU-3V-Qri"/>
+                        <outlet property="welcomeTextOutlet" destination="idU-3c-l4Q" id="O6f-jU-wCN"/>
+                        <segue destination="mJG-RU-caZ" kind="unwind" identifier="unwindSegue" unwindAction="unwind:" id="YQY-yB-mc0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqJ-Qn-iot" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mJG-RU-caZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2159" y="112"/>
         </scene>
@@ -529,10 +534,10 @@
             </objects>
             <point key="canvasLocation" x="4939" y="563"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Bhh-kz-eus">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dRe-9J-4WT" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dRe-9J-4WT" customClass="TabBarViewController" customModule="HW2_2_4" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L6T-an-U9y">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -578,6 +583,6 @@
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="line" width="632" height="2"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
