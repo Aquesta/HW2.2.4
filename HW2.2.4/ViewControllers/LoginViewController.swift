@@ -14,7 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     // инициализируем пользователя
-    private var user = Authorization()
+    private var user = Login()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // передаем на TabBarVC значения username
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginSegue" {
-            guard let tabBarController = segue.destination as? UITabBarController else { return }
-            guard let welcomeVC = tabBarController.viewControllers?.first as? WelcomeViewController else { return }
-            welcomeVC.userName = user.login as String
+            guard let tabBarControllers = segue.destination as? UITabBarController else { return }
+            guard let welcomeVC = tabBarControllers.viewControllers?.first as? WelcomeViewController else { return }
+            welcomeVC.person = user.person
+            // передаем во вьюху aboutMe
+            guard let navBarVC = tabBarControllers.viewControllers?.last as? UINavigationController else { return }
+            guard let aboutMeVC = navBarVC.viewControllers.first as? AboutMeViewController else { return }
+            aboutMeVC.person = user.person
         }
     }
     
@@ -38,16 +42,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // обработка кнопки Sing In
-    @IBAction func singInPressed(_ sender: UIButton) {
-        authorization()
+    @IBAction func singInAction() {
+         checkAuthorization()
     }
     
     // кнопки забыли пароль и логин
     @IBAction func forgotButtonsAction(_ sender: UIButton) {
         if sender.tag == 1 {
-            showAlert(with: "The username is", and: "Gennady")
+            showAlert(with: "The username is", and: user.login)
         } else {
-            showAlert(with: "The password is", and: "1")
+            showAlert(with: "The password is", and: user.password)
         }
     }
     
@@ -61,15 +65,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if textField == loginTextField {
+            loginTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
-            authorization()
+            checkAuthorization()
         }
         return true
     }
 
     // метод авторизации - проверка заполнения полей, переход на tabBarVC
-    private func authorization() {
+    private func checkAuthorization() {
         guard let login = loginTextField.text, !login.isEmpty else {
             showAlert(with: "Username is empty", and: "Please enter username")
             return

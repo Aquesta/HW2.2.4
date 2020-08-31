@@ -12,22 +12,15 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeTextOutlet: UILabel!
     @IBOutlet var logOutOutlet: UIButton!
     
-    private var tabBar: UITabBar!
-    var userName: String?
+    var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        welcomeTextOutlet.text = "Welcome, \(userName!)"
+        welcomeTextOutlet.text = "Welcome, \(person!.name)"
         logOutOutlet.layer.cornerRadius = 20
         
         // Цвет TabBar
-        tabBar = tabBarController?.tabBar
-        tabBar?.tintColor = .orange
-    }
-    
-    // уходим с VC на стартовый экран через unwind
-    @IBAction func logOutAction() {
-        performSegue(withIdentifier: "unwindSegue", sender: self)
+        self.tabBarController?.tabBar.tintColor = .orange
     }
 }

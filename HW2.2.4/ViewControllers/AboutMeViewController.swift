@@ -16,35 +16,35 @@ class AboutMeViewController: UIViewController {
     @IBOutlet var descriptionOutlet: UILabel!
     @IBOutlet var photoOutlet: UIImageView!
     
-    private let me = Person()
+    var person: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // navBar title
-        self.navigationItem.title = "\(me.name)"
+        self.navigationItem.title = "\(person!.name)"
         
         // надо перенести в функцию, дублируем
         photoOutlet.layer.cornerRadius = photoOutlet.frame.width / 2
         photoOutlet.layer.borderWidth = 2
         photoOutlet.layer.borderColor = UIColor.orange.cgColor
         
-        nameOutlet.text = me.name
-        ageOutlet.text = String(me.age)
-        myWifeOutlet.text = me.wife.name
-        mySonOutlet.text = me.son.name
-        descriptionOutlet.text = me.description
-        photoOutlet.image = UIImage(named: me.photo)
+        nameOutlet.text = person!.name
+        ageOutlet.text = String(person!.age)
+        myWifeOutlet.text = person!.wife.name
+        mySonOutlet.text = person!.son.name
+        descriptionOutlet.text = person!.description
+        photoOutlet.image = UIImage(named: person!.photo)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutWifeSegue" {
             guard let familyVC = segue.destination as? FamilyViewController else { return }
-            familyVC.user = me.wife as Family
+            familyVC.user = person!.wife as Family
         } else if segue.identifier == "aboutSonSegue" {
             guard let familyVC = segue.destination as? FamilyViewController else { return }
-            familyVC.user = me.son as Family
+            familyVC.user = person!.son as Family
         }
     }
 }

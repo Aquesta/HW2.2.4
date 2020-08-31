@@ -6,12 +6,14 @@
 //  Copyright © 2020 Aquesta's. All rights reserved.
 //
 
-struct Authorization {
+struct Login {
     let login: String
     let password: String
+    let person: Person
 
     init() {
         self.login = "Gennady"
         self.password = "1"
+        self.person = Person()
     }
 }
